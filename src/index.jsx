@@ -2,26 +2,24 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.scss';
 import {
-  BrowserRouter, Routes, Route, NavLink, useParams,
+  BrowserRouter, Routes, Route, useParams,
 } from 'react-router';
+import LandingPage from './components/LandingPage';
 
 function About(props) {
   return <div> All there is to know about me </div>;
 }
-function Welcome(props) {
-  return <div>Welcome</div>;
-}
 
-function Nav(props) {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-      </ul>
-    </nav>
-  );
-}
+// function Nav(props) {
+//   return (
+//     <nav>
+//       <ul>
+//         <li><NavLink to="/">Home</NavLink></li>
+//         <li><NavLink to="/about">About</NavLink></li>
+//       </ul>
+//     </nav>
+//   );
+// }
 
 function Test(props) {
   const { id } = useParams();
@@ -35,17 +33,12 @@ function FallBack(props) {
 function App(props) {
   return (
     <BrowserRouter>
-      <div>
-        <Nav />
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/test/:id" element={<Test />} />
-          <Route path="*" element={<FallBack />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/test/:id" element={<Test />} />
+        <Route path="*" element={<FallBack />} />
+      </Routes>
     </BrowserRouter>
   );
 }

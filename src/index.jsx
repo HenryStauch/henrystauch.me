@@ -5,10 +5,8 @@ import {
   BrowserRouter, Routes, Route, useParams,
 } from 'react-router';
 import LandingPage from './components/LandingPage';
-
-function About(props) {
-  return <div> All there is to know about me </div>;
-}
+import About from './components/About';
+import Contact from './components/Contact';
 
 // function Nav(props) {
 //   return (
@@ -36,6 +34,7 @@ function App(props) {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/test/:id" element={<Test />} />
         <Route path="*" element={<FallBack />} />
       </Routes>

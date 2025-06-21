@@ -4,7 +4,7 @@ import './style.scss';
 import {
   BrowserRouter, Routes, Route, useParams,
 } from 'react-router';
-import LandingPage from './components/landingpage';
+import LandingPage from './components/LandingPage';
 import About from './components/About';
 import Contact from './components/Contact';
 

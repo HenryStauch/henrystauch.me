@@ -11,6 +11,9 @@ export default defineConfig({
     react(),
     eslint(),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   css: {
     postcss: {
       plugins: [
